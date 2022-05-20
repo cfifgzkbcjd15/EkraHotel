@@ -1,16 +1,17 @@
 import Login from './components/autorization/loginUser.vue'
+import {createRouter,createWebHistory} from 'vue-router'
 
-const routers=[
+const routes=[
     {
         path: '/loginUser',
         component: Login,
         // meta:{
         //   layout: "Auth"
     },
-    {
-        path: '/',
-        redirect: '/loginUser'
-    }
+    // {
+    //     path: '/',
+    //     redirect: '/loginUser'
+    // }
 ] 
 
 const router = createRouter({

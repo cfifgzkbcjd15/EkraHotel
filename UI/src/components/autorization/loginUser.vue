@@ -1,8 +1,4 @@
 <template class="text-center">
-    <div class="text-center">
-
-    <main class="form-signin">
-        <form>
             <div class="container">
                 <div class="row">
                     <div class="col-sm-3">
@@ -12,11 +8,11 @@
                         <h1 class="h3 mb-3 fw-normal">Вход</h1>
 
                         <div class="form-floating">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <input type="email" class="form-control" v-model="Email" placeholder="name@example.com">
                             <label for="floatingInput">Введите почту</label>
                         </div>
                         <div class="form-floating">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <input type="password" class="form-control" v-model="Password"  placeholder="Password">
                             <label for="floatingPassword">Введите пароль</label>
                         </div>
 
@@ -28,10 +24,7 @@
 
                         <div class="row">
                             <div class="col-sm-6">
-                                <button class="w-100 btn btn-lg btn-primary" type="submit" onclick="saveInputUser()">Войти</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <button class="w-100 btn btn-lg btn-primary" type="submit" onclick="registrationUser()">Регистрация</button>
+                                <button @click="auth()">Войти</button>
                             </div>
                         </div>
                     </div>
@@ -41,7 +34,26 @@
                     </div>
                 </div>
             </div>
-        </form>
-    </main>
-</div>
 </template>
+<script>
+import api from "../../api"
+export default{
+    data(){
+        return{
+        Email:"",
+        Password:""
+        }
+    },
+    methods:{
+        auth(){
+            api.post('Auth/Admin',this.$data)
+            .then((res)=>{if(res.data!=null)
+            {
+            localStorage.token=res.data.token;
+            localStorage.fullName=res.data.fullName
+            //this.$router.push("/")
+            }})
+        }
+    }
+}
+</script>
