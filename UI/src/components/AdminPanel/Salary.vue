@@ -1,19 +1,21 @@
 <template>
-    <div v-for="item in model" :key="item.id">
-     <!-- <p>{{item.rooms.number}}</p> -->
-    </div>
+{{model}}
+{{incentives}}
+    
 </template>
 <script>
 import api from "../../api"
 export default{
     data(){
         return{
-            model:[]
+            model:[],
+            incentives:[]
         }
     },
     methods:{
         refreshData(){
-            api.get("Booking").then((res)=>{this.model=res.data})
+            api.get("Salary").then((res)=>{this.model=res.data})
+            api.get("Incentives").then((res)=>{this.incentives=res.data})
         }
     },
     mounted:function(){

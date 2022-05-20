@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import Default from './layouts/Default.vue'
+import Default from './components/layouts/Default.vue'
 
-createApp(App)
-.use(router).component("default-layout",Default)
+createApp(App).component("default-layout",Default)
+.use(router)
 .mount('#app')
