@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EkraHotel.Models
 {
@@ -6,6 +7,7 @@ namespace EkraHotel.Models
     {
         [Key]
         public int Id { get; set; }
+        [ForeignKey("StaffId")]
         public Staff Staff { get; set; }
         public Guid StaffId { get; set; }
         public int Payments { get; set; }

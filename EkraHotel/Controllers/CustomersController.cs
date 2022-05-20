@@ -1,10 +1,12 @@
 ﻿using EkraHotel.Data;
 using EkraHotel.Models;
 using EkraHotel.ViewModels.Customers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EkraHotel.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CustomersController:ControllerBase

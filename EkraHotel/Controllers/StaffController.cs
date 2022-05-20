@@ -1,11 +1,13 @@
 ﻿using EkraHotel.Data;
 using EkraHotel.Models;
 using EkraHotel.ViewModels.Stuff;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EkraHotel.Controllers
 {
+    [Authorize(Roles = "admin,")]
     [Route("api/[controller]")]
     [ApiController]
     public class StaffController : ControllerBase
