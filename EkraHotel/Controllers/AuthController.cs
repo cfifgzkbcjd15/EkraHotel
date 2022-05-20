@@ -32,8 +32,7 @@ namespace EkraHotel.Controllers
 
             var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, identity.FullName),
-                    new Claim(ClaimTypes.NameIdentifier,identity.Id.ToString()),
+                    new Claim(ClaimTypes.Name,identity.Id.ToString() ),
                     new Claim(ClaimTypes.Role,identity.Roles.Name),
                     new Claim(ClaimTypes.Email,identity.Email)
                 };

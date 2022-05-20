@@ -26,7 +26,7 @@ namespace EkraHotel.Controllers
         [HttpPost]
         public async Task Post(AddServices model)
         {
-            db.Services.Add(new Services { CustomersId=model.CustomersId, Date=DateTime.Now, Price=model.Price, Text=model.Text, TypeId=model.TypeId });
+            db.Services.Add(new Services { CustomersId= new Guid(User.Identity.Name), Date=DateTime.Now, Price=model.Price, Text=model.Text, TypeId=model.TypeId });
             await db.SaveChangesAsync();
         }
     }

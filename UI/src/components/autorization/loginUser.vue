@@ -1,4 +1,5 @@
-<body class="text-center">
+<template class="text-center">
+    <div class="text-center">
 
     <main class="form-signin">
         <form>
@@ -8,7 +9,7 @@
 
                     </div>
                     <div class="col-sm-6">
-                        <h1 class="h3 mb-3 fw-normal">Вход администратора</h1>
+                        <h1 class="h3 mb-3 fw-normal">Вход</h1>
 
                         <div class="form-floating">
                             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -27,10 +28,10 @@
 
                         <div class="row">
                             <div class="col-sm-6">
-                                <button class="w-100 btn btn-lg btn-primary" type="submit" id="saveInputAdmin">Войти</button>
+                                <button class="w-100 btn btn-lg btn-primary" type="submit" onclick="saveInputUser()">Войти</button>
                             </div>
                             <div class="col-sm-6">
-                                <button class="w-100 btn btn-lg btn-primary" type="submit" onclick="registrationAdmin()">Регистрация</button>
+                                <button class="w-100 btn btn-lg btn-primary" type="submit" onclick="registrationUser()">Регистрация</button>
                             </div>
                         </div>
                     </div>
@@ -42,4 +43,5 @@
             </div>
         </form>
     </main>
-</body>
+</div>
+</template>
