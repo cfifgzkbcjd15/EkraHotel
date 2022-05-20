@@ -17,11 +17,29 @@ export default {
 </script>
 
 <style>
+body {
+  background: #211F20;
+  color: #ffffff;
+}
+
+.form-floating {
+  color: #171717;
+}
+
+.btn-primary {
+  background: #00A96B;
+  border-color: #00A96B;
+}
+
+.navbar {
+  box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 15px 15px;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 10%;
 }
 </style>
