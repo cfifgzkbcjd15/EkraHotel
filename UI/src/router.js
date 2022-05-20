@@ -5,13 +5,16 @@ const routes=[
     {
         path: '/loginUser',
         component: Login,
-        // meta:{
-        //   layout: "Auth"
     },
-    // {
-    //     path: '/',
-    //     redirect: '/loginUser'
-    // }
+    {
+        path: '/',
+        redirect: '/loginUser'
+    },
+    {
+        path: '/loginStaff',
+        component: LoginStaff,
+    },
+
 ] 
 
 const router = createRouter({

@@ -46,7 +46,7 @@ export default{
     },
     methods:{
         auth(){
-            api.post('Auth/Admin',this.$data)
+            api.post('Auth/User',this.$data)
             .then((res)=>{if(res.data!=null)
             {
             localStorage.token=res.data.token;
