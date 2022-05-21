@@ -3,6 +3,9 @@ import {createRouter,createWebHistory} from 'vue-router'
 import Salary from './components/AdminPanel/Salary.vue'
 import Room from './components/AdminPanel/Rooms.vue'
 import LoginStaff from './components/autorization/LoginStaff.vue'
+import error from './components/errors/403.vue'
+import errors from './components/errors/500.vue'
+import notfound from './components/errors/notfound.vue'
 
 const routes=[
     {
@@ -39,6 +42,24 @@ const routes=[
             title:"Зарплата"
         }
     },
+    {
+      path: '/error/403',
+      component: error,
+      // meta:{
+      //   layout: "Auth"
+    },
+    {
+      path: '/error/500',
+      component: errors,
+      // meta:{
+      //   layout: "Auth"
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      component: notfound,
+      // meta:{
+      //   layout: "Auth"
+    }
 
 ] 
 
