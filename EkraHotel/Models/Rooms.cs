@@ -11,5 +11,8 @@ namespace EkraHotel.Models
         public int Price { get; set; }
         public RoomsType Type { get; set; }
         public int TypeId { get; set;}
+        public bool Disabled { get; set; }
+        public Booking Bookings { get; set; }
+        public int BookingsId { get; set; }
     }
 }
