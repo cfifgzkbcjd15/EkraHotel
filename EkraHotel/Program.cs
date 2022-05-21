@@ -39,7 +39,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             // валидация ключа безопасности
             ValidateIssuerSigningKey = true,
             //Время
-            ClockSkew = TimeSpan.FromMinutes(15)
+            ClockSkew = TimeSpan.FromDays(1)
         };
     });
 var app = builder.Build();
