@@ -16,6 +16,14 @@ namespace EkraHotel.Controllers
         {
             db = _db;
         }
+
+        [Route("Revenue")]
+        [HttpGet]
+        public async Task<IEnumerable<Revenue>> Revenue()
+        {
+            return db.Revenue.ToList();
+        }
+
         [HttpGet]
         public async Task<IEnumerable<Salary>> Get()
         {
