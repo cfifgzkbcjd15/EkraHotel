@@ -27,7 +27,7 @@
                         <button class="w-100 btn btn-lg btn-primary" @click="auth()">Войти</button>
                     </div>
                     <div class="col-sm-6">
-                        <button class="w-100 btn btn-lg btn-primary" @click="">Регистрация</button>
+                        <router-link class="w-100 btn btn-lg btn-primary" to="/Register">Регистрация</router-link>
                     </div>
                 </div>
             </div>

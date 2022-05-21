@@ -6,6 +6,7 @@ import LoginStaff from './components/autorization/LoginStaff.vue'
 import error from './components/errors/403.vue'
 import errors from './components/errors/500.vue'
 import notfound from './components/errors/notfound.vue'
+import register from './components/autorization/register.vue'
 
 const routes=[
     {
@@ -28,6 +29,13 @@ const routes=[
             layout: "empty"
         }
     },
+    {
+      path: '/Register',
+      component: register,
+      meta:{
+          title:"Регистрация"
+      }
+  },
     {
         path: '/AdminPanel',
         component: Room,
@@ -69,7 +77,7 @@ const router = createRouter({
   })
   router.beforeEach((to, from, next) => {
     document.title = to.meta.title
-     if (localStorage.token==null&&to.path != '/loginUser'&&to.path!='/LoginStaff') {
+     if (localStorage.token==null&&to.path != '/loginUser'&&to.path!='/LoginStaff'&&to.path!="/Register") {
          next("/loginUser");
      }
      else if(localStorage.token!=null&&to.path == '/loginUser') {router.push("/")}

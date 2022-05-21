@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EkraHotel.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CustomersController:ControllerBase
@@ -22,6 +22,7 @@ namespace EkraHotel.Controllers
             db.Customers.Add(new Customers { Email=customers.Email, FullName=customers.FullName, Lives=false, Password=customers.Password } );
             await db.SaveChangesAsync();
         }
+        [Authorize]
         [HttpPut("{userId}")]
         public async Task Put(Guid userId,Customers customers)
         {
