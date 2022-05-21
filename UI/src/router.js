@@ -29,19 +29,19 @@ const routes=[
         }
     },
     {
-        path: '/AdminPanel/',
+        path: '/AdminPanel',
         component: Room,
         meta:{
             title:"Админка"
         }
     },
-    {
-        path: '/AdminPanel/Salary',
-        component: Salary,
-        meta:{
-            title:"Зарплата"
-        }
-    },
+    // {
+    //     path: '/AdminPanel/Salary',
+    //     component: Salary,
+    //     meta:{
+    //         title:"Зарплата"
+    //     }
+    // },
     {
       path: '/error/403',
       component: error,
