@@ -54,7 +54,7 @@ export default {
             {
             localStorage.token=res.data.token;
             localStorage.fullName=res.data.fullName
-            //this.$router.push("/")
+            this.$router.push("/AdminPanel")
             }})
         }
     }
