@@ -23,12 +23,14 @@ namespace EkraHotel.Controllers
         public async Task<IEnumerable<Booking>> Get()
         {
             var rooms = db.Rooms.Include(x => x.Bookings).ThenInclude(x=>x.Customers).ToList();
-            foreach(var i in rooms.Where(x => x.Bookings.DateEnd < DateTime.Now))
+            foreach(var i in rooms.Where(x => x.Bookings.DateEnd < DateTime.Now&&!x.Disabled))
             {
                 i.Bookings.Customers.Lives = false;
+                db.Bookings.Update(i.Bookings);
                 i.Disabled = true;
                 db.Rooms.Update(i);
             }
+            await db.SaveChangesAsync();
             return db.Bookings.Include(x=>x.Customers).Include(x=>x.Rooms).ToList();
         }
         [HttpPost]

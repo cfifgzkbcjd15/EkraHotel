@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace EkraHotel.Models
 {
@@ -12,6 +13,7 @@ namespace EkraHotel.Models
         public RoomsType Type { get; set; }
         public int TypeId { get; set;}
         public bool Disabled { get; set; }
+        [JsonIgnore]
         public Booking Bookings { get; set; }
         public int BookingsId { get; set; }
     }
